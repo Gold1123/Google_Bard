@@ -11,7 +11,6 @@ params = {
     "api_key": os.getenv("SERP_API_KEY")
 }
 
-
 search = GoogleSearch(params)
 results = search.get_dict()
 
@@ -35,7 +34,7 @@ if not place_result:
         }
         search = GoogleSearch(params)
         results = search.get_dict()
-        return results['search_metadata']['google_maps_url']
+        # return results['search_metadata']['google_maps_url']
     else:
         print("No GPS coordinates found for this place.")
 else:
