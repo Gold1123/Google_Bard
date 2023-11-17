@@ -18,6 +18,7 @@ results = search.get_dict()
 print(os.getenv("SERP_API_KEY"))
 search = GoogleSearch(params)
 results = search.get_dict()
+print(results)
 place_result = results.get('place_results')
 if not place_result:
     first_place = results.get('local_results')[0]
