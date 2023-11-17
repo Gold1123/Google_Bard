@@ -17,7 +17,7 @@ load_dotenv()
 params = {
     "engine": "google_maps",
     "type": "place",
-    "data": "!1sChIJg01JnDlawokRx8bPupQNm60",
+    "data": "!4m5!3m4!1s0x89e26a96e0ab62ad:0x910e3b39e8d7b9f9!8m2!3d43.2011568!4d-71.54422389999999",
     "api_key": os.getenv("SERP_API_KEY")
 }
 
