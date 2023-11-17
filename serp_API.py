@@ -4,28 +4,34 @@ from dotenv import load_dotenv
 import requests
 load_dotenv()
 
-params = {
-    "engine": "google_maps",
-    "q": "Granite Restaurant",
-    "ll": "@40.7455096,-74.0083012,15.1z",
-    "type": "search",
-    "api_key": os.getenv("SERP_API_KEY")
-}
-# headers = {
-#     'User-Agent': 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)'
+# params = {
+#     "engine": "google_maps",
+#     "q": "Granite Restaurant",
+#     "ll": "@40.7455096,-74.0083012,15.1z",
+#     "type": "search",
+#     "api_key": os.getenv("SERP_API_KEY")
 # }
 
-# response = requests.get('https://serpapi.com/search.json',
-#                         params=params, headers=headers)
-# response = requests.get('https://serpapi.com/search.json', params=params)
-# print(response)
-print(os.getenv("SERP_API_KEY"))
-# data = response.json()
-# print(data)
+# from serpapi import GoogleSearch
+
+params = {
+    "engine": "google_maps",
+    "type": "place",
+    "data": "!3m1!4b1!4m6!3m5!1s0x487760d5a813a0ed:0xa081a873e2f526a7!8m2!3d52.6360771!4d-1.1311002!16s%2fg%2f11b6j113kn",
+    "api_key": os.getenv("SERP_API_KEY")
+}
+
 search = GoogleSearch(params)
 results = search.get_dict()
 print(results)
-place_result = results.get('place_results')
+# place_results.booking_link = results["place_results.booking_link"]
+
+
+# print(os.getenv("SERP_API_KEY"))
+# search = GoogleSearch(params)
+# results = search.get_dict()
+# print(results)
+# place_result = results.get('place_results')
 # if place_result:
 #     # Get the first place from the search results
 #     first_place = place_result
