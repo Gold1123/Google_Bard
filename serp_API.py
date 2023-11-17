@@ -18,8 +18,8 @@ results = search.get_dict()
 search = GoogleSearch(params)
 results = search.get_dict()
 # print(results)
-place_result = results.get('place_results')
-if not place_result:
+first_place = results.get('place_results')
+if not first_place:
     first_place = results.get('local_results')[0]
 # print(first_place)
 if 'gps_coordinates' in first_place:
