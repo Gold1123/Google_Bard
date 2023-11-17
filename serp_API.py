@@ -35,7 +35,7 @@ if not place_result:
         }
         search = GoogleSearch(params)
         results = search.get_dict()
-        print(results)
+        print(results['search_metadata']['google_maps_url'])
     else:
         print("No GPS coordinates found for this place.")
 else:
