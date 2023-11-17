@@ -30,7 +30,7 @@ if not place_result:
         params = {
             "engine": "google_maps",
             "type": "place",
-            "data": f"!4m5!3m4!1s{data_id} + !8m2!3d {lat} + !4d + {lng}",
+            "data": f"!4m5!3m4!1s{data_id}!8m2!3d{lat}!4d{lng}",
             "api_key": os.getenv("SERP_API_KEY")
         }
         search = GoogleSearch(params)
