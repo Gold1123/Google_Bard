@@ -7,7 +7,6 @@ load_dotenv()
 params = {
     "engine": "google_maps",
     "q": "Granite Restaurant",
-    "ll": "@40.7455096,-74.0083012,15.1z",
     "type": "search",
     "api_key": os.getenv("SERP_API_KEY")
 }
@@ -35,7 +34,7 @@ if not place_result:
         }
         search = GoogleSearch(params)
         results = search.get_dict()
-        print(results['search_metadata']['google_maps_url'])
+        return results['search_metadata']['google_maps_url']
     else:
         print("No GPS coordinates found for this place.")
 else:
